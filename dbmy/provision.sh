@@ -25,7 +25,7 @@ if [ ! -f /var/vagrant/mysql-server ]; then
 fi
 
 if [ ! -f /var/vagrant/mysql-server-config ]; then
-    cp /vagrant/etc/lr-dev.cnf /etc/mysql/conf.d/lr-dev.cnf
+    cp /vagrant/etc/lr-dev.cnf /etc/mysql/mysql.conf.d/z_liferay.cnf
     
     sed "s/{{password}}/$1/" /vagrant/etc/init-db.sql | mysql -uroot -p$1
 
